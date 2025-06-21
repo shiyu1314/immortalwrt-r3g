@@ -1,0 +1,23 @@
+From d3bf67507f480e248a234dd79e0f981d59a062b7 Mon Sep 17 00:00:00 2001
+From: Joseph Mory <morytyann@outlook.com>
+Date: Fri, 5 Jul 2024 17:15:55 +0800
+Subject: [PATCH] luci-base: Correct how textarea's wrap works
+
+Signed-off-by: Joseph Mory <morytyann@outlook.com>
+---
+ modules/luci-base/htdocs/luci-static/resources/ui.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules/luci-base/htdocs/luci-static/resources/ui.js b/modules/luci-base/htdocs/luci-static/resources/ui.js
+index 90ff86b75a9e..0e395cea20c1 100644
+--- a/modules/luci-base/htdocs/luci-static/resources/ui.js
++++ b/modules/luci-base/htdocs/luci-static/resources/ui.js
+@@ -511,7 +511,7 @@ var UITextarea = UIElement.extend(/** @lends LuCI.ui.Textarea.prototype */ {
+ 			'style': style,
+ 			'cols': this.options.cols,
+ 			'rows': this.options.rows,
+-			'wrap': this.options.wrap ? '' : null
++			'wrap': this.options.wrap ? 'soft' : 'off'
+ 		}, [ value ]));
+ 
+ 		if (this.options.monospace)
